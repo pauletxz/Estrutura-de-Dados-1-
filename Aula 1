@@ -1,37 +1,27 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void ler_vetor (float * vetor, int tamanho)
+void ler_vetor (float * vetor, int tamanho){
     printf("Informe os valores para o vetor");
     for(int index = 0 ; index<tamanho; index++){
         scanf("%f", &vetor[index]);
     }
+}
 
 void imprimir_vetor (float * vetor, int tamanho){
     for(int index= 0; index<tamanho; index++){
-        printf("%f"& vetor);
+        printf("%f", &vetor);
     }
+}
 
 float * criar_vetor(int tamanho){
     float * vetor = (float*) malloc (tamanho * sizeof (float));
     if (vetor == NULL){
-        printf("Alocação Falhou!\n")
-        exit (1);
+        printf("Alocação Falhou!\n");
+        exit(1);
     }
     else {
-        printf("Vetor Alocado!!\n")
-    }
-    return(vetor);
-}
-
-float * criar_vetor2(int tamanho){
-    float * vetor = (float*) malloc (tamanho * sizeof (float));
-    if (vetor == NULL){
-        printf("Alocação Falhou!\n")
-        exit (1);
-    }
-    else {
-        printf("Vetor Alocado!!\n")
+        printf("Vetor Alocado!!\n");
     }
     return(vetor);
 }
@@ -43,6 +33,7 @@ int main(void){
     ler_vetor(vetor, tamanho);
     imprimir_vetor(vetor, tamanho);
     free(vetor);
-return 0;
+
+    return 0;
 }
 
